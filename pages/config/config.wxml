@@ -1,0 +1,74 @@
+<!--pages/config/config.wxml-->
+<!-- <view class='page-header'>
+  <image class='backimg' src='../../images/back@3x.png'></image>
+</view> -->
+<view class='page-body'>
+  <view class="body-title">
+    <text class="title">{{title}}</text>
+  </view>
+  <view class="body-hint">
+    <text class="hint">{{hint}}</text>
+    <text class="hint5G" wx:if="{{wifiFrequency > 5000}}">当前为5G网络</text>
+  </view>
+  <view class="body-input">
+    <view class="wifi-line">
+      <image class="wifiimg" src='../../images/ipc_wifi_signal_status01@3x.png'></image>
+      <input class="wifi-input" placeholder='当前网络名称' value="{{wifissid}}" bindinput="getSsidInput" style="visibility:{{wifissid_visibility}};"></input>
+      <image class="refreshimg" src='../../images/refresh@3x.png' bindtap="refresh"></image>
+    </view>
+    <view class="wifi-line">
+      <image class="wifiimg" src='../../images/lock@3x.png'></image>
+      <!-- <input class="wifi-input" placeholder='输入密码' type="{{typePwd}}" focus="{{isPwdFocus}}" value="{{password}}" bindinput="getPasswordInput" style="visibility:{{password_visibility}};"></input> -->
+      <!-- 隐藏 -->
+      <block wx:if="{{!isShowPwd}}">
+          <input class="wifi-input" password='true' value='{{password}}' bindinput="getPasswordInput" style="visibility:{{password_visibility}};" placeholder='输入密码'></input>
+      </block>
+      <!-- 显示 -->
+      <block wx:if="{{isShowPwd}}">
+          <input class="wifi-input" value='{{password}}' bindinput="getPasswordInput" style="visibility:{{password_visibility}};" placeholder='输入密码'></input>
+      </block>
+      <image class="refreshimg"  bindtap='showPassword' src="{{isShowPwd ? '../../images/public_display@3x.png' : '../../images/hide@3x.png'}}"></image>
+    </view>
+  </view>
+  <view class="body-button">
+    <button bindtap="configBtnClick" class="button">
+      <image class="buttonimg" src='../../images/bg02@3x.png'></image>
+      <view class="buttontext">配置</view>
+    </button>
+  </view>
+</view>
+<view class="page-log">
+  <scroll-view class="sv" scroll-y="true" style='height:100%;' scroll-top="{{scrollTop}}">
+    <view wx:for="{{list}}" wx:key="id">
+      <view class='item'>
+        <block wx:if="{{item.state === 2}}">
+          <image class='poster' src='../../images/refresh@3x.png' animation="{{animation}}" mode="aspectFit"></image>
+        </block>
+        <block wx:elif="{{item.state === 0}}">
+          <image class='poster' src='../../images/success@3x.png'></image>
+        </block>
+        <block wx:else>
+          <image class='poster' src='../../images/fail@3x.png'></image>
+        </block>
+        <text class='title'>{{item.log}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<block wx:if="{{isShowWifiList}}">
+  <view class='toast-box'>
+    <view class='toastbg'></view>
+    <view class='showToast'>
+      <view class="toast-btn-view">
+        <image class="toast-btn" src="../../images/cancel@3x.png" bindtap="cancelToast"></image>
+      </view>
+      <scroll-view class="toast-sv" scroll-y="true" style='height:90%;'>
+        <radio-group wx:for="{{wifi_list}}" wx:key="id" bindchange="radioChange">
+          <view class='toast-item'>
+            <radio value='{"ssid": "{{item.SSID}}", "bssid": "{{item.BSSID}}", "frequency": "{{item.frequency}}"}'>{{item.SSID}}</radio>
+          </view>
+        </radio-group>
+      </scroll-view>
+    </view> 
+  </view>
+</block>

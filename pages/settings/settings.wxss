@@ -1,0 +1,132 @@
+/* pages/settings/settings.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #F0F0F0;
+  display: flex;
+  flex-direction: column;
+}
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333333;
+  width: 100%;
+  height: 128rpx;
+}
+.page-header .page-title {
+  margin-top: 16rpx;
+  font-size: 40rpx;
+}
+.table-title {
+  display: flex;
+  /* background-color: red; */
+  height: 100rpx;
+}
+.table-title .text {
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 46rpx;
+  margin-left: 40rpx;
+}
+.table-item {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 112rpx;
+}
+.table-item .left-text {
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 36rpx;
+  margin-left: 40rpx;
+}
+.table-item .right-text {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: -36rpx;
+  margin-right: 40rpx;
+  align-self: flex-end;
+}
+
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #F0F0F0;
+  color: #333333;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.toast-button {
+  display: flex;
+  width: 100%;
+}
+
+.toast-button .button1 {
+  width: 50%;
+}
+
+.toast-button .button2 {
+  width: 50%;
+}
+
+.toast-button .button1 button {
+  width: 100%;
+  background-color: white;
+  color: #333333;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.toast-button .button2 button{
+  width: 100%;
+  background-color: white;
+  color: #333333;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+}

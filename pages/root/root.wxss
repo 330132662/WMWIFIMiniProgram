@@ -1,0 +1,64 @@
+/* pages/root/root.wxss */
+page {
+
+  background-color: #F0F0F0;
+}
+.container {
+  padding: 0;
+}
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333333;
+  width: 100%;
+  height: 128rpx;
+  background-color: #F0F0F0;
+}
+.page-header .page-title {
+  margin-top: 16rpx;
+  font-size: 40rpx;
+}
+.page-header .setting-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -50rpx;
+  margin-right: 40rpx;
+  width: 44rpx;
+  height: 44rpx;
+  align-self: flex-end;
+}
+.page-header .setting-img {
+  width: 18rpx;
+  height: 44rpx;
+}
+.page-body {
+  width: 100%;
+  background-color: white;
+}
+.item {
+  display: flex;
+  height: 108rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  cursor: pointer;
+}
+.item .poster {
+  width: 28rpx;
+  height: 60rpx;
+  margin-top: 26rpx;
+  margin-left: 40rpx;
+}
+.item .title {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 36rpx;
+  margin-left: 32rpx;
+}
+.item .rightimg {
+  width: 16rpx;
+  height: 32rpx;
+  margin-top: 36rpx;
+  margin-right: 40rpx;
+}

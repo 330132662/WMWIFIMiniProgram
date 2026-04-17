@@ -1,0 +1,39 @@
+<!--pages/root/root.wxml-->
+<view class='container'>
+  <!--等待框-->
+  <loading hidden="{{!loading}}">发现设备中...</loading>
+  <!--顶部标题栏-->
+  <view class='page-header'>
+    <text class='page-title'>{{title}}</text>
+    <!-- <view class="setting-view" > -->
+    <navigator class="setting-view" url='../settings/settings'>
+      <!-- <view class="setting-view"> -->
+        <image class="setting-img" src="../../images/setting@3x.png"></image>
+      <!-- </view> -->
+    </navigator>
+    <!-- </view> -->
+  </view>
+  <!--sytle test
+  <view class='page-body'>
+    <view class='item'>
+      <image class='poster' src='../../images/Bluetooth@3x.png'></image>
+      <text class='title'>hello</text>
+      <image class='rightimg' src='../../images/next@3x.png'></image>
+    </view>
+  </view>-->
+  <!--列表-->
+  <view class='page-body' wx:for="{{list}}" wx:key="id">
+    <navigator url='../config/config?deviceId={{item.deviceId}}'>
+      <view class='item'>
+        <image class='poster' src='../../images/Bluetooth@3x.png'></image>
+        <block wx:if="{{item.name === ''}}">
+          <text class='title'>{{item.deviceId}}</text>
+        </block>
+        <block wx:else>
+          <text class='title'>{{item.name}}</text>
+        </block>
+        <image class='rightimg' src='../../images/next@3x.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

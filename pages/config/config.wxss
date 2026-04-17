@@ -1,0 +1,183 @@
+/* pages/config/config.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #F0F0F0;
+  display: flex;
+  flex-direction: column;
+}
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #333333;
+  width: 100%;
+  height: 68rpx;
+}
+.page-header .backimg {
+  margin-top: 22rpx;
+  margin-left: 40rpx;
+  width: 20rpx;
+  height: 44rpx;
+}
+.page-log {
+  flex: 1;
+  /* https://www.jianshu.com/p/26c501790ef5 */
+  /* 问题：可以看到一旦加入scroll-view组件，样式被破坏了，header的高度莫名其妙变成了0；
+  疑问：小程序的说法是要求scroll-view一定要给一个固定的高度，不然就不行，难道只能用第一种方法来实现这个布局了？
+  我发现一个tip，其实只要给外围的box一个高度即可，随便一个高度，因为设置了flex拉伸级别，这个高度不影响拉伸；在H5中是没意义的，但是这里可以解决问题； */
+  height: 100px;
+}
+.page-log .sv {
+  height: 100%;
+}
+.page-body {
+  width: 100%;
+}
+.body-title {
+  display: flex;
+  flex-direction: column;
+}
+.body-title .title{
+  margin-top: 60rpx;
+  margin-left: 80rpx;
+  font-size: 64rpx;
+  color: #333333;
+}
+.body-hint {
+  display: flex;
+  flex-direction: column;
+}
+.body-hint .hint{
+  margin-top: 64rpx;
+  margin-left: 80rpx;
+  font-size: 32rpx;
+  color: #394efa;
+}
+.body-hint .hint5G{
+  margin-top: 24rpx;
+  margin-left: 80rpx;
+  font-size: 36rpx;
+  color: #f11616;
+}
+.wifi-line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 112rpx;
+  margin-top: 8rpx;
+}
+.wifiimg {
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 40rpx;
+  margin-top: 54rpx;
+}
+.wifi-input {
+  font-size: 32rpx;
+  width: 75%;
+  margin-left: 8rpx;
+  margin-top: 58rpx;
+  border-bottom: 1rpx solid #CCCCCC;
+}
+.refreshimg {
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 54rpx;
+  margin-left: 8rpx;
+}
+.body-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.body-button .button {
+  width: 65%;
+  height: 112rpx;
+  margin-top: 54rpx;
+  padding: 0;
+}
+.body-button .button .buttonimg {
+  width: 100%;
+  height: 100%;
+}
+.body-button .button .buttontext {
+  margin-top: -94rpx;
+  color: white;
+  font-size: 40rpx;
+}
+.item {
+  display: flex;
+  height: 70rpx;
+  /* border-bottom: 1rpx solid #e6e6e6; */
+  cursor: pointer;
+}
+.item .poster {
+  width: 40rpx;
+  height: 36rpx;
+  margin-top: 26rpx;
+  margin-left: 40rpx;
+}
+.item .title {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 26rpx;
+  margin-left: 20rpx;
+}
+
+.toast-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+.showToast {
+  display: flex;
+  flex-direction: column;
+  height:  80%;
+  position: absolute;
+  opacity: 1;
+  width: 75%;
+  margin-left: 10%;
+  margin-top: 10%;
+  padding-left: 5%;
+  color: #333333;
+  background-color: #F0F0F0;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+.toast-btn-view{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 95%;
+}
+.toast-btn-view .toast-btn{
+  width: 48rpx;
+  height: 48rpx;
+}
+.toast-box .showToast .toast-sv {
+  margin-top: 30rpx;
+}
+.toast-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+  /* border-bottom: 1rpx solid #e6e6e6; */
+  cursor: pointer;
+}
